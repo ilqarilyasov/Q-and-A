@@ -21,6 +21,16 @@ class QuestionsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    var question: Question? {
+        didSet { updateViews() }
+    }
+    
+    private func updateViews() {
+        guard let unwrappedQuestion = question else { return }
+        questionLabel.text = unwrappedQuestion.question
+        askedByLabel.text = unwrappedQuestion.asker
+    }
+    
     @IBOutlet weak var questionConstantLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var askedByLabel: UILabel!

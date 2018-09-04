@@ -85,6 +85,7 @@
                                     <outlet property="questionConstantLabel" destination="C3F-cl-8dw" id="BGf-aX-cdQ"/>
                                     <outlet property="questionLabel" destination="lRg-Ea-Wvq" id="u8t-vO-l23"/>
                                     <outlet property="triggerLable" destination="7Ru-Sq-0QY" id="wq6-Rw-cwf"/>
+                                    <segue destination="MqY-9S-Muc" kind="show" identifier="QACellSegue" id="SZe-mE-7wt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -97,6 +98,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Ask Question" id="cvK-c3-I6R">
                             <connections>
                                 <action selector="askQuestionAction:" destination="hmm-7i-IOv" id="NEE-ix-3ir"/>
+                                <segue destination="aF7-om-UUh" kind="show" identifier="AskQuestionSegue" id="dxD-FX-8YJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -107,6 +109,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ydg-Yp-lzj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="988" y="157.87106446776613"/>
+        </scene>
+        <!--AskQuestion-->
+        <scene sceneID="NA5-CU-DP8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AskQuestion" id="aF7-om-UUh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SqO-sW-IMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1658" y="-39"/>
+        </scene>
+        <!--Answer-->
+        <scene sceneID="v5K-EP-jPv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Answer" id="MqY-9S-Muc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aJ0-0C-Yy1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1658" y="293"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TgT-WQ-GIU">
