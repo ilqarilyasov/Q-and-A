@@ -21,7 +21,7 @@ class QuestionsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "QACellSegue", for: indexPath) as? QuestionsTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "QACell", for: indexPath) as? QuestionsTableViewCell else { return UITableViewCell()}
         
         let theQuestion = questionController.questions[indexPath.row]
         cell.question = theQuestion
@@ -42,10 +42,19 @@ class QuestionsTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "AskQuestionSegue" {
+            guard let destinationVC = segue.destination as? AskQuestionViewController else { return }
+            destinationVC.questionController = questionController
+        } else if segue.identifier == "QACellSegue" {
+            guard let destionatinVC = segue.destination as? AnswerViewController,
+                  let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            let question = questionController.questions[indexPath.row]
+            destionatinVC.questionController = questionController
+            destionatinVC.question = question
+        }
     }
     
     let questionController = QuestionController()

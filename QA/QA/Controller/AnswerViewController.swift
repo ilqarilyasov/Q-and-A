@@ -27,8 +27,9 @@ class AnswerViewController: UIViewController {
     */
     
     func updateViews() {
-        
-        
+        questionLabel.text = question?.question
+        askerLabel.text = question?.asker
+        // ALERT
     }
     
     @IBAction func submitAnswerAction(_ sender: Any) {
